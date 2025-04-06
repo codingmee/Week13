@@ -1,0 +1,32 @@
+@model List<Week13.Models.UserRolesViewModel>
+
+@{
+    ViewData["Title"] = "User Roles";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>User Name</th>
+        <th>Roles</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var userRoles in Model)
+    {
+        <tr>
+            <td>@userRoles.UserName</td>
+            <td>
+                <ul>
+                    @foreach (var role in userRoles.Roles)
+                    {
+                        <li>@role</li>
+                    }
+                </ul>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

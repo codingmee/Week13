@@ -1,0 +1,15 @@
+@{
+    var isAdminOrSuperAdmin = Model; 
+}
+
+@if (isAdminOrSuperAdmin)
+{
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="adminDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Admin Options
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+            <li><a class="dropdown-item" href="/UserRoles/Manage">Manage User Roles</a></li>
+        </ul>
+    </div>
+}

@@ -1,0 +1,26 @@
+@model Week13.Models.UserRoleManageViewModel
+
+@{
+    ViewData["Title"] = "Manage User Roles";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h3>User: @Model.UserName</h3>
+
+<form asp-action="Manage" method="post">
+    <div>
+        <h4>Available Roles</h4>
+        <select asp-for="SelectedRoles" asp-items="@(new SelectList(Model.AvailableRoles))" multiple="multiple">
+            @foreach (var role in Model.AvailableRoles)
+            {
+                <option value="@role"
+                        selected="@Model.SelectedRoles.Contains(role)">@role</option>
+            }
+        </select>
+    </div>
+
+    <div>
+        <button type="submit">Save Changes</button>
+    </div>
+</form>

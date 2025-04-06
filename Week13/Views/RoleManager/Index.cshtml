@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Role Manager - Index";
+}
+
+<h1>Available Roles</h1>
+
+<ul>
+    @foreach (var role in Model)
+    {
+        <li>@role</li>
+    }
+</ul>
+
+<a href="@Url.Action("AddRole", "RoleManager")">Add New Role</a>

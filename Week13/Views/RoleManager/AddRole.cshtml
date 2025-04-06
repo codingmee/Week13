@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "Add New Role";
+}
+
+<h1>Add New Role</h1>
+
+<form method="post">
+    <label for="roleName">Role Name:</label>
+    <input type="text" id="roleName" name="roleName" required />
+    <button type="submit">Add Role</button>
+</form>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div style="color:red;">
+        @ViewBag.ErrorMessage
+    </div>
+}
